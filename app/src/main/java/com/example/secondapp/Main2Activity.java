@@ -15,27 +15,31 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        EditText username = (EditText) findViewById(R.id.ed_username);
-        String content =username.getText().toString();
-        username.setText(content);
-
-
-        EditText age=(EditText)findViewById(R.id.editText4);
-        String content1=age.getText().toString();
-        age.setText(content1);
-
-
-        EditText address=(EditText)findViewById(R.id.editText5);
-        String content2=address.getText().toString();
-        address.setText(content2);
-
-
         Button save=(Button)findViewById(R.id.button2);
         save.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(Main2Activity.this,AppDatabase.class);
+                // for getting the username
+                EditText a=(EditText)findViewById(R.id.ed_username);
+                String content= a.getText().toString();
+
+
+                // for getting the user age
+                EditText b=(EditText)findViewById(R.id.editText4);
+                String content1=b.getText().toString();
+
+                // for getting the address of user
+                EditText c=(EditText)findViewById(R.id.editText5);
+                String content2=c.getText().toString();
+
+
+                Intent intent=new Intent(Main2Activity.this,LoginRecordActivity.class);
+                intent.putExtra("username",content);
+                intent.putExtra("age",content1);
+                intent.putExtra("address",content2);
+
+
                 startActivity(intent);
             }
         });

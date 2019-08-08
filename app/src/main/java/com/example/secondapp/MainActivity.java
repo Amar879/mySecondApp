@@ -10,7 +10,7 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity{
-    public static final String USERNAME_ADDED="new_username";
+    //public static AppDatabase appDatabase;
     private EditText username;
 
 
@@ -21,6 +21,9 @@ public class MainActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+
+
 
 
         // for button insert
